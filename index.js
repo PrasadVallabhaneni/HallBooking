@@ -1,8 +1,10 @@
 var fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
+require("dotenv").config();
+const port = process.env.PORT || 3002;
 const app = express();
-app.listen(3002);
+app.listen(port, () => console.log(port));
 app.use(bodyParser.json());
 halls = [];
 app.get("/Halls", (req, res) => {
